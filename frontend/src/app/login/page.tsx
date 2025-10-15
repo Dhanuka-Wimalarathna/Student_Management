@@ -121,32 +121,6 @@ export default function LoginPage() {
                 </div>
               </div>
 
-              {/* <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <input
-                    id="remember-me"
-                    name="remember-me"
-                    type="checkbox"
-                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-                  />
-                  <label
-                    htmlFor="remember-me"
-                    className="ml-2 block text-sm text-gray-700"
-                  >
-                    Remember me
-                  </label>
-                </div>
-
-                <div className="text-sm">
-                  <a
-                    href="#"
-                    className="font-medium text-primary-600 hover:text-primary-500"
-                  >
-                    Forgot your password?
-                  </a>
-                </div>
-              </div> */}
-
               <div>
                 <Button
                   type="submit"
@@ -193,42 +167,14 @@ export default function LoginPage() {
       <div className="hidden lg:block relative flex-1 bg-gradient-to-br from-primary-50 to-accent-50 border-l border-gray-100">
         <div className="absolute inset-0 flex items-center justify-center p-12">
           <div className="text-center">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-8">
-              <svg
-                className="mx-auto h-24 w-24 text-primary-600 mb-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M12 14l9-5-9-5-9 5 9 5z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M12 14l9-5-9-5-9 5 9 5z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M12 14v6l9-5M12 20l-9-5"
-                />
-              </svg>
-            </div>
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Madushani Driving School
             </h3>
             <p className="text-gray-600 text-lg max-w-md mx-auto">
-              Manage students, exams, and academic records efficiently in one
+              Manage students, exams, and driving records efficiently in one
               place
             </p>
 
-            {/* Feature list */}
             <div className="mt-8 grid grid-cols-1 gap-3 text-left max-w-sm mx-auto">
               <div className="flex items-center text-gray-600">
                 <svg
@@ -244,7 +190,7 @@ export default function LoginPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                Student records management
+                Student driving records
               </div>
               <div className="flex items-center text-gray-600">
                 <svg
@@ -260,7 +206,7 @@ export default function LoginPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                Exam scheduling & tracking
+                Lesson scheduling & tracking
               </div>
               <div className="flex items-center text-gray-600">
                 <svg
@@ -276,7 +222,7 @@ export default function LoginPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                Academic performance analytics
+                Driving test management
               </div>
             </div>
           </div>
