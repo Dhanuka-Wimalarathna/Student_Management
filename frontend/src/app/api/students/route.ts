@@ -5,7 +5,7 @@ const BACKEND_URL = process.env.BACKEND_API_URL;
 
 export async function GET() {
   try {
-    const response = await fetch(`${BACKEND_URL}/students`);
+    const response = await fetch(`${BACKEND_URL}/api/students`);
 
     if (!response.ok) {
       throw new Error(`Backend responded with status: ${response.status}`);
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
   try {
     const studentData = await request.json();
 
-    const response = await fetch(`${BACKEND_URL}/students`, {
+    const response = await fetch(`${BACKEND_URL}/api/students`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
