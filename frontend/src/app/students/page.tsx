@@ -7,19 +7,7 @@ import StudentForm, { StudentFormData } from "@/components/StudentForm";
 import Modal from "@/components/ui/Modal";
 import Button from "@/components/ui/Button";
 import { Plus, Users, Search } from "lucide-react";
-
-export interface Student {
-  id: number;
-  name: string;
-  nic: string;
-  phone: string;
-  status: string;
-  firstName?: string;
-  lastName?: string;
-  address?: string;
-  enrollmentDate?: string;
-  vehicleCategory?: string;
-}
+import { Student } from "@/app/types/student";
 
 export default function StudentsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,11 +16,9 @@ export default function StudentsPage() {
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Fetch students from Next.js API route (hidden backend)
   const fetchStudents = async () => {
     try {
       setLoading(true);
-      // Changed from http://localhost:5000/api/students to:
       const response = await fetch("/api/students");
 
       if (!response.ok) {

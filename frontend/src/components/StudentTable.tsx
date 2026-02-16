@@ -1,6 +1,6 @@
 "use client";
 
-import { Student } from "@/app/students/page";
+import { Student } from "@/app/types/student";
 
 interface StudentTableProps {
   students: Student[];
@@ -63,7 +63,7 @@ export default function StudentTable({ students }: StudentTableProps) {
             <td className="px-4 py-3">
               <span
                 className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusBadge(
-                  student.status
+                  student.status,
                 )}`}
               >
                 {student.status}

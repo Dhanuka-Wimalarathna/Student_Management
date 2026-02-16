@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import db from "../config/db.js";
+import Auth from "../models/authModel.js";
 
 const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 
@@ -9,8 +9,7 @@ export const register = (req, res) => {
 
   const hashedPassword = bcrypt.hashSync(password, 10);
 
-  const query = "INSERT INTO admins (name, email, password) VALUES (?, ?, ?)";
-  db.query(query, [name, email, hashedPassword], (err) => {
+  Auth.createAdmin(name, email, hashedPassword, (err) => {
     if (err)
       return res.status(500).json({ message: "Database error", error: err });
     res.json({ message: "User registered successfully" });
@@ -19,9 +18,8 @@ export const register = (req, res) => {
 
 export const login = (req, res) => {
   const { email, password } = req.body;
-  const query = "SELECT * FROM admins WHERE email = ?";
 
-  db.query(query, [email], (err, results) => {
+  Auth.findByEmail(email, (err, results) => {
     if (err) return res.status(500).json({ message: "Database error" });
     if (results.length === 0)
       return res.status(404).json({ message: "User not found" });
