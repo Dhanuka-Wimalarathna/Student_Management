@@ -2,34 +2,39 @@ import { ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline' | 'danger';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary" | "outline" | "danger";
+  size?: "sm" | "md" | "lg";
 }
 
-export default function Button({ 
-  children, 
-  variant = 'primary', 
-  size = 'md',
-  className = '',
-  ...props 
+export default function Button({
+  children,
+  variant = "primary",
+  size = "md",
+  className = "",
+  ...props
 }: ButtonProps) {
-  const baseStyles = 'font-medium rounded-lg transition-colors flex items-center gap-2';
-  
+  const baseStyles =
+    "font-medium rounded-lg transition-colors flex items-center gap-2";
+
   const variants = {
-    primary: 'bg-primary-600 text-white hover:bg-primary-700 shadow-md hover:shadow-lg',
-    secondary: 'bg-success-500 text-white hover:bg-success-600',
-    outline: 'border border-gray-300 text-gray-700 hover:bg-gray-50',
-    danger: 'bg-red-500 text-white hover:bg-red-600'
+    primary:
+      "bg-indigo-500 text-white hover:bg-indigo-600 shadow-md hover:shadow-lg ring-1 ring-indigo-300 transition-all duration-200",
+    secondary:
+      "bg-emerald-500 text-white hover:bg-emerald-600 shadow-sm hover:shadow-md ring-1 ring-emerald-300 transition-all duration-200",
+    outline:
+      "border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 hover:shadow-sm transition-all duration-200",
+    danger:
+      "bg-rose-500 text-white hover:bg-rose-600 shadow-md hover:shadow-lg ring-1 ring-rose-300 transition-all duration-200",
   };
-  
+
   const sizes = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-4 py-2',
-    lg: 'px-6 py-3 text-lg'
+    sm: "px-3 py-1.5 text-sm",
+    md: "px-4 py-2",
+    lg: "px-6 py-3 text-lg",
   };
 
   return (
-    <button 
+    <button
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >

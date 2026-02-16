@@ -1,4 +1,3 @@
-// frontend/src/app/api/students/route.ts
 import { NextRequest, NextResponse } from "next/server";
 
 const BACKEND_URL = process.env.BACKEND_API_URL;
@@ -17,7 +16,7 @@ export async function GET() {
     console.error("API route error:", error);
     return NextResponse.json(
       { error: "Failed to fetch students" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -46,7 +45,7 @@ export async function POST(request: NextRequest) {
     console.error("API route error:", error);
     return NextResponse.json(
       { error: "Failed to add student" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

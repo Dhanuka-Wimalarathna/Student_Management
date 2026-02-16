@@ -44,10 +44,11 @@ export default function ExamsPage() {
 
   return (
     <Layout>
-      <div className="p-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-6">Exams</h1>
-        <ExamTable exams={examData} />
+      <div className="mb-8">
+        <h1 className="text-2xl font-bold text-gray-900">Exam Details</h1>
+        <p className="text-gray-600 mt-1">Check student test result </p>
       </div>
+      <ExamTable exams={examData} />
     </Layout>
   );
 }
